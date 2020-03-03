@@ -46,7 +46,16 @@ f.close()
 You can find the complete notebook for this part [here.](https://github.com/farzad-yousefi/Assessment-of-online-news-popularity/blob/master/Scraping_parsing_article_titles.ipynb)
 
 ## Merging Article Titles with the Original CSV File
-Here, I have used the url as a key to merge titles to their associated row in the original CSV file. My goal here, is to use the 'number of shares' column in the [original CSV file](https://github.com/farzad-yousefi/Assessment-of-online-news-popularity/blob/master/OnlineNewsPopularity.csv) and 'titles' column in [the scraped article titles.](https://github.com/farzad-yousefi/Assessment-of-online-news-popularity/blob/master/article_titles_urls.csv)
+Here, I have used the url as a key to merge titles to their associated rows in the original CSV file. My goal here, is to use the 'number of shares' column in the [original CSV file](https://github.com/farzad-yousefi/Assessment-of-online-news-popularity/blob/master/OnlineNewsPopularity.csv) and 'titles' column in [the scraped article titles.](https://github.com/farzad-yousefi/Assessment-of-online-news-popularity/blob/master/article_titles_urls.csv)
+
+Before merging them, I had to address a little problem and that was replacing https with http in the newly parsed CSV file. Seems like the original CSV file was from a couple of years ago and that is why the article links were http, and my newly scraped data contained https for article titles.
+```python
+df_total = pd.read_csv('OnlineNewsPopularity.csv')
+df = pd.read_csv('article_titles_urls.csv', sep='\n', header = None)
+titles = df[0].str.split('/,', expand=True)
+titles.head()
+```
+
 
 
 
