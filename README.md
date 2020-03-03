@@ -43,4 +43,6 @@ for i in range(39645):
         print(i)
 f.close()
 ```
+You can find the complete notebook for this part [here](https://github.com/farzad-yousefi/Assessment-of-online-news-popularity/blob/master/Scraping_parsing_article_titles.ipynb)
+
 
