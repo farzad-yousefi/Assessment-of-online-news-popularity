@@ -68,6 +68,58 @@ titles_numberofshares_df.drop(['url'], inplace=True, axis=1)
 final_df=titles_numberofshares_df.drop(titles_numberofshares_df.index[0])
 final_df['popular'] = final_df[' shares'].apply(lambda x: 1 if (x >= 1400) else 0)
 ```
+At this point, I will define X matrix which is the titles of articles, and y matrix which is the binary column (popular-unpopular). Splitting to train and test will happen afterward:
+
+```python
+from sklearn.model_selection import train_test_split
+
+X = final_df[1].values
+y = final_df['popular'].values
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+```
+I will be trying to make a simple LSTM RNN to predict the popularity of an article based on it title. First, some imports:
+
+```python
+import tensorflow as tf
+from tensorflow.keras.preprocessing.text import Tokenizer
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+```
+Then,some hyperparameters will be chosen based on the data size and some other considerations.
+
+```python
+vocab_size = 5000
+max_length = 14
+embedding_dim = 128
+trunc_type = 'post'
+padding_type = 'post'
+oov_tok = '<OOV>'
+```
+I will tokenize the train set first and then basically, repeat the same process to tokenize test set. The motivation here, is to convert string to number vectors. The number vectors will be then fed to RNN.
+
+
+```python
+tokenizer = Tokenizer(num_words = vocab_size)
+tokenizer.fit_on_texts(X_train)
+word_index = tokenizer.word_index
+X_train_article_titles_sequences = tokenizer.texts_to_sequences(X_train)
+X_train_article_titles_padded = pad_sequences(X_train_article_titles_sequences, maxlen=max_length, padding=padding_type, truncating=trunc_type)
+
+X_test_article_titles_sequences = tokenizer.texts_to_sequences(X_test)
+X_test_article_titles_padded = pad_sequences(X_test_article_titles_sequences, maxlen=max_length, padding=padding_type, truncating=trunc_type)
+```
+Most of the times, it is the best practice to start with very simple RNN. If simple networks don't perform well, additional layers are always easy to be added thanks to Tensorflow Keras:
+
+```python
+model1 = tf.keras.Sequential()
+model1.add(tf.keras.layers.Embedding(input_dim = vocab_size, output_dim = embedding_dim, input_length = max_length))
+model1.add(tf.keras.layers.LSTM(units = embedding_dim))
+model1.add(tf.keras.layers.Dropout(0.2))
+model1.add(tf.keras.layers.Dense(1, activation = 'relu'))
+model1.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
+model1.summary()
+```
+
 
 
 
