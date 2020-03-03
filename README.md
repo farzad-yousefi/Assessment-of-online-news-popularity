@@ -10,6 +10,8 @@ This file was downloaded from [UCI Machine Learning Repository.](https://archive
 ```python
 df = pd.read_csv('OnlineNewsPopularity.csv')
 ```
+## EDA:
+You can find explainatory data analysis of the CSV file [here.](https://github.com/farzad-yousefi/Assessment-of-online-news-popularity/blob/master/Newspopularity_EDA.ipynb)
 
 ## Data Scraping:
 The 'url' column in this file was used to scrape Title and content of almost 40,000 articles from mashable.com and dumped to a Mongodb for future parsing.
