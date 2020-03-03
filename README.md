@@ -12,13 +12,18 @@ df = pd.read_csv('OnlineNewsPopularity.csv')
 ```
 
 ## Data Scraping:
-Title and content of almost 40,000 articles were scraped from mashable.com and dumped to a Mongodb for future parsing.
+The 'url' column in this file was used to scrape Title and content of almost 40,000 articles from mashable.com and dumped to a Mongodb for future parsing.
 ```python
-import foobar
+client = MongoClient('localhost', 27017)
+db = client.capstone
+articles = db.articles
 
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
+for url in df['url']:
+    r = requests.get(url)
+    try:
+        articles.insert_one({'html': r.content})
+    except:
+        pass
 ```
 
 
