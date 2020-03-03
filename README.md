@@ -25,7 +25,7 @@ for url in df['url']:
     except:
         pass
 ```
-
+By defining and using two functions (to get the url and article title), the results were parsed and written to another CSV  file [article_titles_urls.csv](https://github.com/farzad-yousefi/Assessment-of-online-news-popularity/blob/master/article_titles_urls.csv).  
 
 
 
