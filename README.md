@@ -5,6 +5,7 @@ Predicting popularity in the Internet is a challenging and non-trivial task due 
 
 ## CSV file description:
 There is a csv file in this repo: [OnlineNewsPopularity.csv](https://github.com/farzad-yousefi/Assessment-of-online-news-popularity/blob/master/OnlineNewsPopularity.csv)
+This file was downloaded from [UCI Machine Learning Repository (https://archive.ics.uci.edu/ml/datasets/online+news+popularity)
 
 ## Data Scraping:
 Title and content of almost 40,000 articles were scraped from mashable.com and dumped to a Mongodb for future parsing.
