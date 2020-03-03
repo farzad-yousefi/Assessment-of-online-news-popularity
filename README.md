@@ -118,6 +118,8 @@ model1.add(tf.keras.layers.Dropout(0.2))
 model1.add(tf.keras.layers.Dense(1, activation = 'relu'))
 model1.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 model1.summary()
+num_epochs = 15
+history = model1.fit(X_train_article_titles_padded, y_train, epochs=num_epochs, validation_data=(X_test_article_titles_padded, y_test), verbose=2)
 ```
 
 
