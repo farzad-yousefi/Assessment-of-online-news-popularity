@@ -121,7 +121,7 @@ model1.summary()
 num_epochs = 15
 history = model1.fit(X_train_article_titles_padded, y_train, epochs=num_epochs, validation_data=(X_test_article_titles_padded, y_test), verbose=2)
 ```
-
+You can find the complete code for this part [here.](https://github.com/farzad-yousefi/Assessment-of-online-news-popularity/blob/master/LSTM_RNN_news_popularity.ipynb)
 
 
 
