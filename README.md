@@ -26,8 +26,21 @@ for url in df['url']:
         pass
 ```
 By defining and using two functions (to get the url and article title), the results were parsed and written to another CSV  file [article_titles_urls.csv](https://github.com/farzad-yousefi/Assessment-of-online-news-popularity/blob/master/article_titles_urls.csv).  
+```python
+def soup(n):
+    return BeautifulSoup(articles.find()[n]['html']).find("header", {"class": "article-header"}).find("h1").text
+    
+def soup3(n):
+    return BeautifulSoup(articles.find()[n]['html']).find("header", {"class": "article-header"}).find("h1")['href']
 
-
-
-
+f = open("article_titles_urls.csv", "a")
+for i in range(39645):
+    try:
+        f.write(soup3(i)+","+soup(i)+","+'\n')
+    except:
+        pass
+    if i%1000 == 0:
+        print(i)
+f.close()
+```
 
