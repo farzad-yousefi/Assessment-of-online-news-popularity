@@ -60,7 +60,8 @@ titles.drop(columns = 0, axis = 1, inplace =True)
 titles = titles[['url',1]]
 
 ```
-After taking care of that, it is time to merge two dataframes on 'url'.
+After taking care of that, it is time to merge two dataframes on 'url'. I also added a binary column with a condition of 1 for rows that have higher than 1400 shares and 0 for rows with lower than 1400 shares. So, popular articles will be 1s and unpopular articles will be 0s.
+
 ```python
 titles_numberofshares_df = pd.merge(df_total,titles, how='inner', on=['url'])
 titles_numberofshares_df.drop(['url'], inplace=True, axis=1)
