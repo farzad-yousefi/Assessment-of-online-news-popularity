@@ -51,10 +51,23 @@ Here, I have used the url as a key to merge titles to their associated rows in t
 Before merging them, I had to address a little problem and that was replacing https with http in the newly parsed CSV file. Seems like the original CSV file was from a couple of years ago and that is why the article links were http, and my newly scraped data contained https for article titles.
 ```python
 df_total = pd.read_csv('OnlineNewsPopularity.csv')
+df_total = df_total[['url',' shares']]
+df_total['url'] = df_total['url'].map(lambda x: str(x)[:-1])
 df = pd.read_csv('article_titles_urls.csv', sep='\n', header = None)
 titles = df[0].str.split('/,', expand=True)
-titles.head()
+titles['url']= titles[0].str.replace('https','http')
+titles.drop(columns = 0, axis = 1, inplace =True)
+titles = titles[['url',1]]
+
 ```
+After taking care of that, it is time to merge two dataframes on 'url'.
+```python
+titles_numberofshares_df = pd.merge(df_total,titles, how='inner', on=['url'])
+titles_numberofshares_df.drop(['url'], inplace=True, axis=1)
+final_df=titles_numberofshares_df.drop(titles_numberofshares_df.index[0])
+final_df['popular'] = final_df[' shares'].apply(lambda x: 1 if (x >= 1400) else 0)
+```
+
 
 
 
