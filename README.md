@@ -47,6 +47,10 @@ f.close()
 ```
 You can find the complete notebook for this part [here.](https://github.com/farzad-yousefi/Assessment-of-online-news-popularity/blob/master/Scraping_parsing_article_titles.ipynb)
 
+## Non-Neural Network Models
+Before jumping into RNN and more advanced methods, it is reasonable to have some base models and compare their performance with advanced models. [Here](https://github.com/farzad-yousefi/Assessment-of-online-news-popularity/blob/master/models.ipynb) you can find some RandomForestClassifier models with their associated ROC curves for future comparisons.
+
+
 ## Merging Article Titles with the Original CSV File
 Here, I have used the url as a key to merge titles to their associated rows in the original CSV file. My goal here, is to use the 'number of shares' column in the [original CSV file](https://github.com/farzad-yousefi/Assessment-of-online-news-popularity/blob/master/OnlineNewsPopularity.csv) and 'titles' column in [the scraped article titles.](https://github.com/farzad-yousefi/Assessment-of-online-news-popularity/blob/master/article_titles_urls.csv)
 
