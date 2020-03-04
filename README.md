@@ -2,6 +2,10 @@
 
 ## Introduction:
 Predicting popularity in the Internet is a challenging and non-trivial task due to a multitude of factors impacting the distribution of the information: external context, social network of the publishing party, relevance of the video to the final user, etc. In this project, I have tried to use LSTM RNN to predict the popularity of online articles from mashable.com by using only the title of the articles.
+The ever increasing popularity of the Internet as a virtual space to share content inspired research community to analyze different aspects of online information distribution. Various types of content were analyzed, ranging from textual data,
+such as Twitter posts or Digg stories to images to videos.
+Although several similarities were observed across content domains, e.g. lognormal distribution of data popularity, in this work I have focused only on textual content and, more precisely, on the popularity of news articles and its relation
+to the article’s title.
 
 ## CSV File Description:
 There is a csv file in this repo: [OnlineNewsPopularity.csv](https://github.com/farzad-yousefi/Assessment-of-online-news-popularity/blob/master/OnlineNewsPopularity.csv.)
