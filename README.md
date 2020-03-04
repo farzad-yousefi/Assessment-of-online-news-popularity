@@ -90,9 +90,12 @@ For some quick preview, I have put some bar chart graphs from EDA here:
 ![weekday_weekend](https://github.com/farzad-yousefi/Assessment-of-online-news-popularity/blob/master/weekend.png)
 ![by_genre](https://github.com/farzad-yousefi/Assessment-of-online-news-popularity/blob/master/genre.png)
 
-Distribution of number of shares that articles got.
+Distribution of number of shares that articles got:
 
 ![distribution](https://github.com/farzad-yousefi/Assessment-of-online-news-popularity/blob/master/distribution.png)
+
+Distribution of all important quantitative feautures in the data:
+
 ![distribution_box](https://github.com/farzad-yousefi/Assessment-of-online-news-popularity/blob/master/histogram_box.png)
 
 
