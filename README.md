@@ -75,6 +75,7 @@ Number of attributes: 61 (58 predictive attributes, 2 non-predictive, 1 goal fie
 58. abs_title_subjectivity: Absolute subjectivity level
 59. abs_title_sentiment_polarity: Absolute polarity level
 60. shares: Number of shares (target)
+
 The articles were published by Mashable (www.mashable.com) and their content as the rights to reproduce it belongs to them. Hence, this dataset does not share the original content but some statistics associated with it. The original content be publicly accessed and retrieved using the provided urls.
 Acquisition date: January 8, 2015
 
