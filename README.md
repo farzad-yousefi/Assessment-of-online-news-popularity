@@ -50,6 +50,7 @@ You can find the complete notebook for this part [here.](https://github.com/farz
 ## Non-Neural Network Models
 Before jumping into RNN and more advanced methods, it is reasonable to have some base models and compare their performance with advanced models. [Here](https://github.com/farzad-yousefi/Assessment-of-online-news-popularity/blob/master/models.ipynb) you can find some RandomForestClassifier and GradientBoostingClassifier models with their associated ROC curves for future comparisons.
 Overall, randomforest and gradientboosting performed almost the same with some marginal win for gradientboosting.
+
 ![ROC curve for RFC](https://github.com/farzad-yousefi/Assessment-of-online-news-popularity/blob/master/RFC.png)
 ![ROC curve for GBC](https://github.com/farzad-yousefi/Assessment-of-online-news-popularity/blob/master/GBC.png)
 
