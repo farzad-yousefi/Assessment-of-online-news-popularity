@@ -84,12 +84,14 @@ This file was downloaded from [UCI Machine Learning Repository.](https://archive
 df = pd.read_csv('OnlineNewsPopularity.csv')
 ```
 ## EDA:
-For some quick preview, I have put some bar results of EDA here:
+For some quick preview, I have put some bar chart graphs from EDA here:
 
 ![by_days](https://github.com/farzad-yousefi/Assessment-of-online-news-popularity/blob/master/days.png)
 ![weekday_weekend](https://github.com/farzad-yousefi/Assessment-of-online-news-popularity/blob/master/weekend.png)
 ![by_genre](https://github.com/farzad-yousefi/Assessment-of-online-news-popularity/blob/master/genre.png)
 ![distribution](https://github.com/farzad-yousefi/Assessment-of-online-news-popularity/blob/master/distribution.png)
+![distribution_box](https://github.com/farzad-yousefi/Assessment-of-online-news-popularity/blob/master/histogram_box.png)
+
 
 You can find explainatory data analysis of the CSV file [here.](https://github.com/farzad-yousefi/Assessment-of-online-news-popularity/blob/master/Newspopularity_EDA.ipynb)
 
