@@ -10,11 +10,10 @@ to the article’s title.
 ## CSV File Description:
 There is a csv file in this repo: [OnlineNewsPopularity.csv](https://github.com/farzad-yousefi/Assessment-of-online-news-popularity/blob/master/OnlineNewsPopularity.csv.)
 
-Attribute Information:
+Attribute information:
 
-Number of Attributes: 61 (58 predictive attributes, 2 non-predictive, 1 goal field)
+Number of attributes: 61 (58 predictive attributes, 2 non-predictive, 1 goal field)
 
-Attribute Information:
 0. url: URL of the article (non-predictive)
 1. timedelta: Days between the article publication and the dataset acquisition (non-predictive)
 2. n_tokens_title: Number of words in the title
