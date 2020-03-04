@@ -10,6 +10,8 @@ to the article’s title.
 ## CSV File Description:
 There is a csv file in this repo: [OnlineNewsPopularity.csv](https://github.com/farzad-yousefi/Assessment-of-online-news-popularity/blob/master/OnlineNewsPopularity.csv.)
 
+![table](https://github.com/farzad-yousefi/Assessment-of-online-news-popularity/blob/master/table.png)
+
 Attribute information:
 
 Number of attributes: 61 (58 predictive attributes, 2 non-predictive, 1 goal field)
